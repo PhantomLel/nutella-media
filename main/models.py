@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     notes = db.relationship('Note', backref='author', lazy=True)
 
     def __repr__(self):
-      return f'User: '
+      return f'User: {self.f_name} {self.l_name}\nEmail: {self.email}'
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
